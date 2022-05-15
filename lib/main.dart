@@ -1,21 +1,28 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class MyChromeSafariBrowser extends ChromeSafariBrowser {
   @override
   void onOpened() {
-    print("ChromeSafari browser opened");
+    if (kDebugMode) {
+      print("ChromeSafari browser opened");
+    }
   }
 
   @override
   void onCompletedInitialLoad() {
-    print("ChromeSafari browser initial load completed");
+    if (kDebugMode) {
+      print("ChromeSafari browser initial load completed");
+    }
   }
 
   @override
   void onClosed() {
-    print("ChromeSafari browser closed");
+    if (kDebugMode) {
+      print("ChromeSafari browser closed");
+    }
   }
 }
 
@@ -24,10 +31,12 @@ Future<void> main() async {
   if (Platform.isAndroid) {
     await AndroidInAppWebViewController.setWebContentsDebuggingEnabled(true);
   }
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,7 +46,9 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Home({Key? key}) : super(key: key);
   @override
   _HomeState createState() => _HomeState();
 }
@@ -55,97 +66,121 @@ class _HomeState extends State<Home> {
           children: [
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen2()));
               },
-              child: Text('1.Sınıf'),
+              child: const Text('1.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen3()));
               },
-              child: Text('2.Sınıf'),
+              child: const Text('2.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen4()));
               },
-              child: Text('3.Sınıf'),
+              child: const Text('3.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen5()));
               },
-              child: Text('4.Sınıf'),
+              child: const Text('4.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen6()));
               },
-              child: Text('5.Sınıf'),
+              child: const Text('5.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen7()));
               },
-              child: Text('6.Sınıf'),
+              child: const Text('6.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen8()));
               },
-              child: Text('7.Sınıf'),
+              child: const Text('7.Sınıf'),
             ),
             ElevatedButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFF00c8ff),
-                surfaceTintColor: Color(0xF000000),
+                minimumSize: const Size(180, 70),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0)),
+                backgroundColor: const Color(0xFF00c8ff),
+                surfaceTintColor: const Color(0x0f000000),
               ),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Screen9()));
               },
-              child: Text('8.Sınıf'),
+              child: const Text('8.Sınıf'),
             ),
             TextButton(
                 onPressed: () {
                   exit(0);
                 },
-                child: Text("ÇIKIŞ"))
+                child: const Text("ÇIKIŞ"))
           ],
         ),
       ),
@@ -154,7 +189,9 @@ class _HomeState extends State<Home> {
 }
 
 class Screen2 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen2({Key? key}) : super(key: key);
   @override
   _Screen2State createState() => _Screen2State();
 }
@@ -168,8 +205,7 @@ class _Screen2State extends State<Screen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Navigate to a new screen on Button click'),
-          backgroundColor: Colors.blueAccent),
+          title: const Text('1.Sınıf'), backgroundColor: Colors.blueAccent),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -188,7 +224,7 @@ class _Screen2State extends State<Screen2> {
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("OKUMA YAZMA"),
+              child: const Text("OKUMA YAZMA"),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -204,7 +240,7 @@ class _Screen2State extends State<Screen2> {
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("  MATEMATİK  "),
+              child: const Text("  MATEMATİK  "),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -220,7 +256,7 @@ class _Screen2State extends State<Screen2> {
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("HAYAT BİLGİSİ"),
+              child: const Text("HAYAT BİLGİSİ"),
             )
           ],
         ),
@@ -230,7 +266,9 @@ class _Screen2State extends State<Screen2> {
 }
 
 class Screen3 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen3({Key? key}) : super(key: key);
   @override
   _Screen3State createState() => _Screen3State();
 }
@@ -263,7 +301,7 @@ class _Screen3State extends State<Screen3> {
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("İNGİLİZCE"),
+              child: const Text("İNGİLİZCE"),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -279,7 +317,7 @@ class _Screen3State extends State<Screen3> {
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("  MATEMATİK  "),
+              child: const Text("  MATEMATİK  "),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -295,7 +333,7 @@ class _Screen3State extends State<Screen3> {
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("HAYAT BİLGİSİ"),
+              child: const Text("HAYAT BİLGİSİ"),
             )
           ],
         ),
@@ -305,7 +343,9 @@ class _Screen3State extends State<Screen3> {
 }
 
 class Screen4 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen4({Key? key}) : super(key: key);
   @override
   _Screen4State createState() => _Screen4State();
 }
@@ -319,8 +359,7 @@ class _Screen4State extends State<Screen4> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('3.Sınıf'),
-          backgroundColor: Colors.blueAccent),
+          title: const Text('3.Sınıf'), backgroundColor: Colors.blueAccent),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -333,13 +372,13 @@ class _Screen4State extends State<Screen4> {
               onPressed: () async {
                 await widget.browser.open(
                     url: Uri.parse(
-                        "https://www.dersizleyin.com/kategori/ilkokul/2-sinif/ingilizce-2/"),
+                        "https://www.dersizleyin.com/kategori/ilkokul/3-sinif/ingilizce-3/"),
                     options: ChromeSafariBrowserClassOptions(
                         android: AndroidChromeCustomTabsOptions(
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("İNGİLİZCE"),
+              child: const Text("İNGİLİZCE"),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -349,13 +388,13 @@ class _Screen4State extends State<Screen4> {
               onPressed: () async {
                 await widget.browser.open(
                     url: Uri.parse(
-                        "https://www.dersizleyin.com/kategori/ilkokul/2-sinif/matematik-2/"),
+                        "https://www.dersizleyin.com/kategori/ilkokul/3-sinif/matematik-3/"),
                     options: ChromeSafariBrowserClassOptions(
                         android: AndroidChromeCustomTabsOptions(
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("  MATEMATİK  "),
+              child: const Text("  MATEMATİK  "),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -365,13 +404,13 @@ class _Screen4State extends State<Screen4> {
               onPressed: () async {
                 await widget.browser.open(
                     url: Uri.parse(
-                        "https://www.dersizleyin.com/kategori/ilkokul/2-sinif/2-sinif-hayat-bilgisi/"),
+                        "https://www.dersizleyin.com/kategori/ilkokul/3-sinif/hayat-3/"),
                     options: ChromeSafariBrowserClassOptions(
                         android: AndroidChromeCustomTabsOptions(
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("HAYAT BİLGİSİ"),
+              child: const Text("HAYAT BİLGİSİ"),
             ),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -381,13 +420,13 @@ class _Screen4State extends State<Screen4> {
                 onPressed: () async {
                   await widget.browser.open(
                       url: Uri.parse(
-                          "https://www.dersizleyin.com/kategori/ilkokul/2-sinif/2-sinif-hayat-bilgisi/"),
+                          "https://www.dersizleyin.com/kategori/ilkokul/3-sinif/fen-bilimleri-3/"),
                       options: ChromeSafariBrowserClassOptions(
                           android: AndroidChromeCustomTabsOptions(
                               shareState: CustomTabsShareState.SHARE_STATE_OFF),
                           ios: IOSSafariOptions(barCollapsingEnabled: true)));
                 },
-                child: Text("FEN BİLİMLERİ")),
+                child: const Text("FEN BİLİMLERİ")),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(180, 90),
@@ -396,13 +435,13 @@ class _Screen4State extends State<Screen4> {
               onPressed: () async {
                 await widget.browser.open(
                     url: Uri.parse(
-                        "https://www.dersizleyin.com/kategori/ilkokul/2-sinif/2-sinif-hayat-bilgisi/"),
+                        "https://www.dersizleyin.com/kategori/ilkokul/3-sinif/turkce-3/"),
                     options: ChromeSafariBrowserClassOptions(
                         android: AndroidChromeCustomTabsOptions(
                             shareState: CustomTabsShareState.SHARE_STATE_OFF),
                         ios: IOSSafariOptions(barCollapsingEnabled: true)));
               },
-              child: Text("TÜRKÇE"),
+              child: const Text("TÜRKÇE"),
             )
           ],
         ),
@@ -412,7 +451,9 @@ class _Screen4State extends State<Screen4> {
 }
 
 class Screen5 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen5({Key? key}) : super(key: key);
   @override
   _Screen5State createState() => _Screen5State();
 }
@@ -426,15 +467,133 @@ class _Screen5State extends State<Screen5> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Navigate to a new screen on Button click'),
-          backgroundColor: Colors.blueAccent),
-      body: const Center(),
+          title: const Text('4.Sınıf'), backgroundColor: Colors.blueAccent),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/ingilizce-4/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("İNGİLİZCE"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/matematik-4/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("  MATEMATİK  "),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/sosyal-bilgiler-4/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("SOSYAL BİLGİLER"),
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/fen-bilimleri-4/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("FEN BİLİMLERİ")),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/turkce-4/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("TÜRKÇE"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/trafik-4/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("TRAFİK"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ilkokul/4-sinif/insan-haklari-4/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("İNSAN HAKLARI"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
 
 class Screen6 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen6({Key? key}) : super(key: key);
   @override
   _Screen6State createState() => _Screen6State();
 }
@@ -447,16 +606,86 @@ class _Screen6State extends State<Screen6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Text('Navigate to a new screen on Button click'),
-          backgroundColor: Colors.blueAccent),
-      body: const Center(),
-    );
+        appBar: AppBar(
+            title: const Text('5.Sınıf'), backgroundColor: Colors.blueAccent),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/5-sinif/ingilizce-5/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("İNGİLİZCE"),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/5-sinif/matematik-5/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("  MATEMATİK  "),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/5-sinif/turkce-5/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("TÜRKÇE"),
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(180, 90),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0))),
+                  onPressed: () async {
+                    await widget.browser.open(
+                        url: Uri.parse(
+                            "https://www.dersizleyin.com/kategori/ortaokul/5-sinif/fen-bilimleri-5/"),
+                        options: ChromeSafariBrowserClassOptions(
+                            android: AndroidChromeCustomTabsOptions(
+                                shareState:
+                                    CustomTabsShareState.SHARE_STATE_OFF),
+                            ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                  },
+                  child: const Text("FEN BİLİMLERİ"))
+            ],
+          ),
+        ));
   }
 }
 
 class Screen7 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen7({Key? key}) : super(key: key);
   @override
   _Screen7State createState() => _Screen7State();
 }
@@ -469,16 +698,86 @@ class _Screen7State extends State<Screen7> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Text('Navigate to a new screen on Button click'),
-          backgroundColor: Colors.blueAccent),
-      body: const Center(),
-    );
+        appBar: AppBar(
+            title: const Text('6.Sınıf'), backgroundColor: Colors.blueAccent),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/6-sinif/ingilizce-6/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("İNGİLİZCE"),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/6-sinif/matematik-6/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("  MATEMATİK  "),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/6-sinif/turkce-6/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("TÜRKÇE"),
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(180, 90),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0))),
+                  onPressed: () async {
+                    await widget.browser.open(
+                        url: Uri.parse(
+                            "https://www.dersizleyin.com/kategori/ortaokul/6-sinif/fen-bilimleri-6/"),
+                        options: ChromeSafariBrowserClassOptions(
+                            android: AndroidChromeCustomTabsOptions(
+                                shareState:
+                                    CustomTabsShareState.SHARE_STATE_OFF),
+                            ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                  },
+                  child: const Text("FEN BİLİMLERİ"))
+            ],
+          ),
+        ));
   }
 }
 
 class Screen8 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen8({Key? key}) : super(key: key);
   @override
   _Screen8State createState() => _Screen8State();
 }
@@ -491,16 +790,86 @@ class _Screen8State extends State<Screen8> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Text('Navigate to a new screen on Button click'),
-          backgroundColor: Colors.blueAccent),
-      body: const Center(),
-    );
+        appBar: AppBar(
+            title: const Text('7.Sınıf'), backgroundColor: Colors.blueAccent),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/7-sinif/ingilizce-7/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("İNGİLİZCE"),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/7-sinif/matematik-7/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("  MATEMATİK  "),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/7-sinif/turkce-7/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("TÜRKÇE"),
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(180, 90),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0))),
+                  onPressed: () async {
+                    await widget.browser.open(
+                        url: Uri.parse(
+                            "https://www.dersizleyin.com/kategori/ortaokul/7-sinif/fen-bilimleri-7/"),
+                        options: ChromeSafariBrowserClassOptions(
+                            android: AndroidChromeCustomTabsOptions(
+                                shareState:
+                                    CustomTabsShareState.SHARE_STATE_OFF),
+                            ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                  },
+                  child: const Text("FEN BİLİMLERİ"))
+            ],
+          ),
+        ));
   }
 }
 
 class Screen9 extends StatefulWidget {
-  final ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  final ChromeSafariBrowser browser = MyChromeSafariBrowser();
+
+  Screen9({Key? key}) : super(key: key);
   @override
   _Screen9State createState() => _Screen9State();
 }
@@ -514,9 +883,77 @@ class _Screen9State extends State<Screen9> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Navigate to a new screen on Button click'),
-          backgroundColor: Colors.blueAccent),
-      body: const Center(),
+          title: const Text('8.Sınıf'), backgroundColor: Colors.blueAccent),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ortaokul/8-sinif/ingilizce-8/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("İNGİLİZCE"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ortaokul/8-sinif/matematik-8/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("  MATEMATİK  "),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(180, 90),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0))),
+              onPressed: () async {
+                await widget.browser.open(
+                    url: Uri.parse(
+                        "https://www.dersizleyin.com/kategori/ortaokul/8-sinif/turkce-8/"),
+                    options: ChromeSafariBrowserClassOptions(
+                        android: AndroidChromeCustomTabsOptions(
+                            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                        ios: IOSSafariOptions(barCollapsingEnabled: true)));
+              },
+              child: const Text("TÜRKÇE"),
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(180, 90),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0))),
+                onPressed: () async {
+                  await widget.browser.open(
+                      url: Uri.parse(
+                          "https://www.dersizleyin.com/kategori/ortaokul/8-sinif/fen-bilimleri-8/"),
+                      options: ChromeSafariBrowserClassOptions(
+                          android: AndroidChromeCustomTabsOptions(
+                              shareState: CustomTabsShareState.SHARE_STATE_OFF),
+                          ios: IOSSafariOptions(barCollapsingEnabled: true)));
+                },
+                child: const Text("FEN BİLİMLERİ"))
+          ],
+        ),
+      ),
     );
   }
 }
