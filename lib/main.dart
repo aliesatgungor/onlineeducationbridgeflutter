@@ -1,35 +1,122 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
+void main() => runApp(MyApp());
+/// This Widget is the main application widget.
 class MyApp extends StatelessWidget {
-  late  WebViewController controller;
-  MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Online Eğitim Köprüsü",
-      color: Colors.blue,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Online Eğitim Köprüsü"),
+      home: Home(),
+    );
+  }
+}
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: const Text("Online Eğitim Köprüsü"),
 
+          backgroundColor: Colors.teal),
+      body: Center(
+        child: Column(
+          children: [
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              height: 24,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+            FlatButton(
+              color: Colors.teal,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen2()));
+              },
+              child: Text('GO TO SCREEN 2'),
+            ),
+
+          ],
         ),
-          body: WebView(
-            javascriptMode: JavascriptMode.unrestricted,
-            initialUrl: "https://www.aliesatgungor.com",
-            onWebViewCreated: (controller){
-              this.controller = controller;
-            },
-          ),
       ),
     );
   }
 }
-
-
+class Screen2 extends StatefulWidget {
+  @override
+  _Screen2State createState() => _Screen2State();
+}
+class _Screen2State extends State<Screen2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: const Text('Navigate to a new screen on Button click'),
+          backgroundColor: Colors.blueAccent),
+      body: Center(
+        child: FlatButton(
+          color: Colors.blueAccent,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Home()));
+          },
+          child: Text('GO TO HOME'),
+        ),
+      ),
+    );
+  }
+}
