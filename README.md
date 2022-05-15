@@ -1,4 +1,4 @@
 # onlineeducationbridge
 
-A new Flutter project.
+Play Store Listing is coming soon
 
